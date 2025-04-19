@@ -179,6 +179,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ClearCounter (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6075904450123709228, guid: c89d267038d590241bf37e9f6e026862, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -563,7 +567,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.3812778, y: -0.042851586, z: 0.017695663, w: 0.9232973}
+  m_LocalRotation: {x: 0.38127777, y: -0.042851545, z: 0.017695645, w: 0.9232973}
   m_LocalPosition: {x: 0, y: 21.5, z: -21.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -736,7 +740,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1463148126}
-  m_LocalRotation: {x: 0.3812778, y: -0.042851586, z: 0.017695663, w: 0.9232973}
+  m_LocalRotation: {x: 0.38127777, y: -0.042851545, z: 0.017695645, w: 0.9232973}
   m_LocalPosition: {x: 0, y: 21.5, z: -21.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
