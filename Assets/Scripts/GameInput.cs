@@ -28,7 +28,7 @@ public class GameInput : MonoBehaviour
 
 
         inputVector = inputVector.normalized;
-        //Debug.Log("GameInput.cs_InputVector" - vecinputVector);
+        Debug.Log("GameInput.cs_InputVector 31" + inputVector);
         return inputVector;
     }
 }
