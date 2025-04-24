@@ -1,47 +1,19 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour, IKitchenObjectParent
+public class ContainerCounter : BaseCounter
 {
+    public event EventHandler OnPlayerGrabbedObject;
     [SerializeField] private KitchenObjectSO kitchenObjectSO;
-    [SerializeField] private Transform counterTopPoint;
 
-    private KitchenObject kitchenObject;
-    public void Interact(Player player)
+    public override void Interact(Player player)
     {
-        if (kitchenObject == null)
-        {
-            Transform kitchenObjectTransform = Instantiate(kitchenObjectSO.prefab, counterTopPoint); // Create new kitchen object
-            kitchenObjectTransform.GetComponent<KitchenObject>().SetKitchenObjectParent(this); // Set this instance of ClerCounter to kitchen object
+        Transform kitchenObjectTransform = Instantiate(kitchenObjectSO.prefab); // Create new kitchen object
+        kitchenObjectTransform.GetComponent<KitchenObject>().SetKitchenObjectParent(player); // Set this object to transform to parent
 
-        }
-        else
-        {
-            // Give the object to player
-            kitchenObject.SetKitchenObjectParent(player);
-
-        }
-
+        OnPlayerGrabbedObject?.Invoke(this, EventArgs.Empty);
     }
-    public Transform GetKitchenObjectFollowTransform()
-    {
-        return counterTopPoint;
-    }
-    public void SetKitchenObject(KitchenObject kitchenObject)
-    {
-        this.kitchenObject = kitchenObject;
-    }
-    public KitchenObject GetKitchenObject()
-    {
-        return kitchenObject;
-    }
-    public void ClearKitchenObject()
-    {
-        kitchenObject = null;
-    }
-    public bool HasKitchenObject()
-    {
-        return kitchenObject != null;
-    }
+        
 }
