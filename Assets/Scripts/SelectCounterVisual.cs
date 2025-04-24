@@ -16,6 +16,7 @@ public class SelectCounterVisual : MonoBehaviour
         if (e.selectedCounter == clearCounter)
         {
             Show();
+            //Debug.Log("selectCounterVisual.cs 19" + e.selectedCounter.gameObject);
         }
         else
         {
