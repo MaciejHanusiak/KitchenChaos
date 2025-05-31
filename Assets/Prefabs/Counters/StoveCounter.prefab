@@ -77,11 +77,39 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5471660018992645714, guid: 0dc418565867e804797c705bbf65833d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4704785460985369948}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5471660018992645724, guid: 0dc418565867e804797c705bbf65833d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7266571155344649106}
   m_SourcePrefab: {fileID: 100100000, guid: 0dc418565867e804797c705bbf65833d, type: 3}
+--- !u!1 &4919067884826336532 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5471660018992645724, guid: 0dc418565867e804797c705bbf65833d, type: 3}
+  m_PrefabInstance: {fileID: 1129057574832347976}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7266571155344649106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4919067884826336532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dfe3cd9b3fcc014793cd05e85e98951, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  counterTopPoint: {fileID: 7278565049536395714}
+  fryingRecipeSOArray:
+  - {fileID: 11400000, guid: 9e4a3c0f6aaca2243a1e60d3c381a2e7, type: 2}
 --- !u!4 &4919067884826336538 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5471660018992645714, guid: 0dc418565867e804797c705bbf65833d, type: 3}
+  m_PrefabInstance: {fileID: 1129057574832347976}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7278565049536395714 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7685849853903512202, guid: 0dc418565867e804797c705bbf65833d, type: 3}
   m_PrefabInstance: {fileID: 1129057574832347976}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4104012713350558577
@@ -274,7 +302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05b782d33658599489826b2561de3868, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseCounter: {fileID: 0}
+  baseCounter: {fileID: 7266571155344649106}
   visualGameObjectArray:
   - {fileID: 4297882337509375718}
   - {fileID: 4766020714955787544}
