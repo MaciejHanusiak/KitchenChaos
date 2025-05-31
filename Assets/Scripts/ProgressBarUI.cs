@@ -11,14 +11,14 @@ public class ProgressBarUI : MonoBehaviour
     {
         cuttingCounter.OnProgressChanged += CuttingCounter_OnProgressChanged;
         barImage.fillAmount = 0f;
-        Debug.Log("Progres bar uI.cs cuttingCounter" + cuttingCounter);
+        // Debug.Log("Progres bar uI.cs cuttingCounter" + cuttingCounter);
         Hide();
     }
 
     private void CuttingCounter_OnProgressChanged(object sender, CuttingCounter.OnProgressChangedEventArgs e)
     {
         barImage.fillAmount = e.progressNormalized;
-        Debug.Log("Progres bar uI.cs " + e.progressNormalized);
+        // Debug.Log("Progres bar uI.cs " + e.progressNormalized); 
 
         if (e.progressNormalized == 0f || e.progressNormalized == 1f)
         {
