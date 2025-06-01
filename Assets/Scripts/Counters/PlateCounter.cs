@@ -1,9 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlateCounter : BaseCounter
 {
+    public event EventHandler OnPlateSpawned;
+    public event EventHandler OnPlateRemoved;
+
     [SerializeField] private KitchenObjectSO plateKitchenObjectSO;
 
     private float spawnPlateTimer;
@@ -19,8 +23,24 @@ public class PlateCounter : BaseCounter
             spawnPlateTimer = 0f;
             if (platesSpawnedAmount < platesSpawnedAmountMax)
             {
-                KitchenObject.SpawnKitchenObject(plateKitchenObjectSO, this);
                 platesSpawnedAmount++;
+                OnPlateSpawned?.Invoke(this, EventArgs.Empty);
+            }
+        }
+    }
+    public override void Interact(Player player)
+    {
+        if (!player.HasKitchenObject())
+        {
+            // Player is empty handed
+            if (platesSpawnedAmount > 0)
+            {
+                // There's at least one plate here
+                platesSpawnedAmount--;
+
+                KitchenObject.SpawnKitchenObject(plateKitchenObjectSO, player);
+
+                OnPlateRemoved?.Invoke(this, EventArgs.Empty);
             }
         }
     }
