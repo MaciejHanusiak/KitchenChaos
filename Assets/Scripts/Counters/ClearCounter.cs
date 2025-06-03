@@ -36,8 +36,10 @@ public class ClearCounter : BaseCounter
                     // Player is holding a Plate
                     Debug.Log("Player is holding a Plate");
                     PlateKitchenObject plateKitchenObject = player.GetKitchenObject() as PlateKitchenObject;
-                    plateKitchenObject.AddIngredient(GetKitchenObject().GetKitchenObjectSO());
-                    GetKitchenObject().DestroySelf();
+                    if (plateKitchenObject.TryAddIngredient(GetKitchenObject().GetKitchenObjectSO()))
+                    {
+                        GetKitchenObject().DestroySelf();
+                    }
                 }
             }
             else

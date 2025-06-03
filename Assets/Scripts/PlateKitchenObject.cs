@@ -9,8 +9,16 @@ public class PlateKitchenObject : KitchenObject
     {
         kitchenObjectSOList = new List<KitchenObjectSO>();
     }
-    public void AddIngredient(KitchenObjectSO kitchenObjectSO)
+    public bool TryAddIngredient(KitchenObjectSO kitchenObjectSO)
     {
-        kitchenObjectSOList.Add(kitchenObjectSO);
+        if (kitchenObjectSOList.Contains(kitchenObjectSO))
+        {
+            return false;
+        }
+        else
+        {
+            kitchenObjectSOList.Add(kitchenObjectSO);
+            return true;
+        }
     }
 }
